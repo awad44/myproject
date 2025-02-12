@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price Calculator</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <style>
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f8f9fa;
+            
+        }
+        .boddy{
+            text-align: start;
+            flex-direction: row;
+            padding: 1.5%;
+
+        }
+        .form{
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            background-color: #ffffff; 
+            animation: fadeIn 0.8s ease-out;
+
+        }
+        .btn-submit:hover {
+        background-color: #6e1b60;
+        }
+        .btn-submit {
+        width: 100%;
+        padding: 14px;
+        background-color: #402fb5;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        }
+        .A1{
+            display: none;
+            
+        }
+        .item {
+            margin-bottom: 10px;
+        }
+        .item button {
+            width: 150px;
+            margin: 5px;
+        }
+        .total {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .cart {
+            margin-top: 20px;
+        }
+        .order-btn {
+            margin-top: 20px;
+        }
+        .boddy{
+            margin-top: 4%;
+            background-image: url(imgs/5.webp);
+            background-size: 55%;
+           
+        }
+        .pro-img img{
+           margin-left: 35%;
+           border: solid rgba(0, 123, 255, 0.56);
+           border-radius: 50%;
+        }
+
+    </style>
+</head>
+<body class="boddy">
+    <div class="A1" id="A1">
+    <div class="container animate__animated animate__fadeIn" id="container">
+        <h2 class="text-center">Exchange <img src="icons/icons8-hand-holding-dollar-32.png" alt="" width="40"> Calculator</h2>
+        <div class="item text-center">
+            <button class="btn btn-outline-primary animate__animated animate__fadeIn" onclick="addToCart(0.62, 'Austrlian')"><img src="currencies/6472008.png" class="animate__animated animate__flip" alt="" width="40"> ($0.62)</button>
+            <button class="btn btn-outline-primary animate__animated animate__fadeIn" onclick="addToCart(0.00661, 'Yuan')"><img src="currencies/6472013.png" class="animate__animated animate__flip" alt="" width="40"> ($0.0066)</button>
+            <button class="btn btn-outline-primary animate__animated animate__fadeIn" onclick="addToCart(1.03, 'Euro')"><img src="currencies/6472015.png"  class="animate__animated animate__flip"alt="" width="40"> ($1.03)</button>
+            <button class="btn btn-outline-primary animate__animated animate__fadeIn" onclick="addToCart(0.26, 'Riyal')"><img src="currencies/coin-02-128.webp" class="animate__animated animate__flip" alt="" width="40"> ($0.26)</button>
+            <button class="btn btn-outline-primary animate__animated animate__fadeIn" onclick="addToCart(0.027, 'Turkish')"><img src="currencies/6472019.png"class="animate__animated animate__flip" alt="" width="40"> ($0.027)</button>
+            <button class="btn btn-outline-primary animate__animated animate__fadeIn" onclick="addToCart(0.14, 'Chinese')"><img src="currencies/6472026.png" class="animate__animated animate__flip" alt="" width="40"> ($0.14)</button>
+            <button class="btn btn-outline-primary animate__animated animate__fadeIn" onclick="addToCart(0.99, 'Whish')"><img src="currencies/coin-32-128.webp" class="animate__animated animate__flip"  width="40"> ($0.99)</button>
+            <button class="btn btn-outline-primary animate__animated animate__fadeIn" onclick="addToCart(90000, 'BTC')"><img src="currencies/BTC-256.webp"     class="animate__animated animate__flip"  width="40"> ($90k)</button>
+            <button class="btn btn-outline-primary animate__animated animate__fadeIn" onclick="addToCart(1.02, 'USDT')"><img src="currencies/USDT-alt-256.webp" class="animate__animated animate__flip" width="40"> ($1.02)</button>
+            <button class="btn btn-outline-primary animate__animated animate__fadeIn" onclick="addToCart(1, 'Lebanese')"><img src="currencies/coin-40-128.webp" class="animate__animated animate__flip" width="40" > ($89500)</button>
+        </div>
+        <div class="cart" id="cart"></div>
+        <div class="total text-center" id="totalPrice">Total Price: $0</div>
+        <button class="btn btn-success order-btn animate__animated animate__fadeIn" onclick="placeOrder()">Order</button>
+    </div>
+    </div>
+    <!-- ----------------------------------form-------------------------- -->
+    <div class="bodyForm">
+    <div class="form" id="form">
+        <form action="" onsubmit="take_order(event)">
+            <div class="pro-img">
+                <img class="pro-start animate__animated animate__flip" src="/icons/User.png" alt="User Icon" width="66"></div>
+            <div>
+            <label for="username">Username</label><br>
+            <input type="text" placeholder="Username" class="username form-control" id="username" style="width: 350px;" required></div>
+            <div>
+            <label for="password">Password</label><br>
+            <input type="password" placeholder="Password" id="password" class="password form-control"  style= "width: 350px ; "  required></div><div><br>
+            <button type="submit" class="btn-submit">Submit</button></div>
+        </form>
+        
+    </div>
+    </div>
+    <script>
+        let total = 0;
+        let cartItems = [];
+        const serviceCharge = 5;
+
+        // Add item to the cart
+        function addToCart(price, itemName) {
+            const quantity = prompt(`Enter the quantity for ${itemName}:`);
+            if (quantity !== null && quantity > 0) {
+                const itemTotal = price * quantity;
+                total += itemTotal;
+                cartItems.push(`${itemName} x ${quantity} = $${itemTotal}`);
+                const cart = document.getElementById('cart');
+                const item = document.createElement('div');
+                item.className = 'animate__animated animate__fadeIn';
+                item.innerText = `${itemName} x ${quantity} = $${itemTotal}`;
+                cart.appendChild(item);
+                document.getElementById('totalPrice').innerText = `Total Price with Service: $${total + serviceCharge}`;
+            }
+        }
+
+        // Place order
+        function placeOrder() {
+            const phoneNumber = prompt("Enter your phone number:");
+            if (phoneNumber) {
+                const orderDetails = cartItems.join('\n');
+                const finalMessage = `Order Details:\n${orderDetails}\nService Charge: $${serviceCharge}\nTotal Price: $${total + serviceCharge}`;
+                const cart = document.getElementById('cart');
+                const serviceChargeItem = document.createElement('div');
+                serviceChargeItem.className = 'animate__animated animate__fadeIn';
+                serviceChargeItem.innerText = `Service Charge: $${serviceCharge}`;
+                cart.appendChild(serviceChargeItem);
+                const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(finalMessage)}`;
+                window.open(whatsappUrl, '_blank');
+            }
+        }
+
+        // Handle login and display order form
+        function take_order(event) {
+            event.preventDefault(); // Prevent form submission
+
+            const name = document.getElementById('username').value;
+            const pass = document.getElementById('password').value;
+            const orderLink = document.getElementById('A1');
+            const formLink = document.getElementById('form');
+
+            if (name === "awad" && pass === "12345") {
+                formLink.style.display = 'none';  // Hide the form
+                orderLink.style.display = 'flex';  // Show the order section
+            } else {
+                alert('Invalid credentials');
+            }
+        }
+    </script>
+</body>
+</html>

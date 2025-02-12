@@ -1,0 +1,329 @@
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,400" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <link
+    href="https://getbootstrap.com/docs/5.3/assets/css/docs.css"
+    rel="stylesheet"
+  />
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+/>
+  <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <title>CHARTS</title>
+  <link rel="stylesheet" href="style1.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+  </head>
+  <body>
+    <section class="navbar111">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+              <a class="nav-link disabled" id="home" href="page02.html">HOME</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="Vprices.html" style="font-weight: 600;">&nbsp;&nbsp;&nbsp;&nbsp;WATCH LIST</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="Vchart.html" style="font-weight: 600;">&nbsp;&nbsp;&nbsp;&nbsp;CHART</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle disabled" id="news" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-weight: 600;">
+                      &nbsp;&nbsp;&nbsp;&nbsp;NEWS
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="news1.html">METALS</a></li>
+                      <li><a class="dropdown-item" href="news2.html">CRYPTO</a></li>
+                      <li><a class="dropdown-item" href="news3.html">CURRENCY</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="news4.html">STOCKS</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link disabled" aria-disabled="true" style="font-weight: 600;">&nbsp;&nbsp;&nbsp;&nbsp;STATUS <img src="/icons/icons8-active-48.png" width="30"></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link disabled" id="profile" aria-current="page" href="profile.html" style="font-weight: 600;">&nbsp;&nbsp;&nbsp;&nbsp;<img src="/icons/icons8-username.gif"  width="35" >&nbsp;PROFILE</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link disabled" id="Take-Order" aria-current="page" href="TakeOrder.html" style="font-weight: 600;">&nbsp;&nbsp;&nbsp;&nbsp;<img src="/icons/icons8-list-48.png"  width="33" >&nbsp;Take-Order</a>
+                  </li>
+                </ul>
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+          </nav>
+        </header>
+        <h1 class="animate__animated  animate__slideInLeft" style=" font-family: kaushan script,cursive ; color:rgb(255, 255, 255); padding: 1%; font-weight: 600;">"You don't have to be a<br>  genius to <span  style="color: rgb(255, 234, 0);">invest</span> well." <br><span class="quote" >&copy;Warren Buffett</span><br></h1>
+      </section>
+  <div class="container">
+    <div class="card animate__animated animate__zoomIn">
+      <h4 class="title"><a href="#" onclick="checkConnection('https://www.tradingview.com/chart/?symbol=NASDAQ%3AAAPL', 'offline/offline1.html')">
+        <img src="/icons/CVS9QHHVqqW5.gif" alt="Plan 1" class="icon"><p><b>STOCKS</b></p> 
+    </a></h4>
+      <div class="bar">
+        <div class="emptybar"></div>
+        <div class="filledbar"></div>
+      </div>
+      <div class="circle">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <circle class="stroke" cx="60" cy="60" r="50"/>
+      </svg>
+      </div>
+    </div>
+    <div class="card animate__animated animate__zoomIn">
+      <h4 class="title"><a href="#" onclick="checkConnection('https://www.tradingview.com/chart/?symbol=COMEX%3AGC1%21', 'offline/offline2.html')">
+        <img src="/icons/icons8-gold-64.png" alt="Plan 2" class="icon"><p><b>GOLD</b></p> 
+    </a></h4>
+      <div class="bar">
+        <div class="emptybar"></div>
+        <div class="filledbar"></div>
+      </div>
+      <div class="circle">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <circle class="stroke" cx="60" cy="60" r="50"/>
+      </svg>
+      </div>
+    </div>
+    <div class="card animate__animated animate__zoomIn">
+      <h4 class="title"><a href="#" onclick="checkConnection('https://www.tradingview.com/chart/?symbol=CRYPTO%3ABTCUSD', 'offline/offline3.html')">
+        <img src="/icons/ovHld7NfgG9g.gif" alt="Plan 3" class="icon"><p><b>BITCOIN</b></p> 
+    </a></h4>
+      <div class="bar">
+        <div class="emptybar"></div>
+        <div class="filledbar"></div>
+      </div>
+      <div class="circle">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <circle class="stroke" cx="60" cy="60" r="50"/>
+      </svg>
+      </div>
+    </div>
+    <div class="card animate__animated animate__zoomIn">
+      <h4 class="title"><a href="#" onclick="checkConnection('https://www.tradingview.com/chart/?symbol=NYMEX%3ACL1%21', 'offline/offline4.html')">
+        <img src="/icons/تنزيل.png" alt="Plan 4" class="icon"><p><b>OIL</b></p> 
+    </a></h4>
+      <div class="bar">
+        <div class="emptybar"></div>
+        <div class="filledbar"></div>
+      </div>
+      <div class="circle">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <circle class="stroke" cx="60" cy="60" r="50"/>
+      </svg>
+      </div>
+    </div>
+       <div class="card animate__animated animate__zoomIn">
+      <h4 class="title"><a href="#" onclick="checkConnection('https://www.tradingview.com/chart/?symbol=FX_IDC%3AEURUSD', 'offline/offline5.html')">
+        <img src="/icons/تنزيل (2).png" alt="Plan 5" class="icon"><p><b>EURO</b></p> 
+    </a></h4>
+      <div class="bar">
+        <div class="emptybar"></div>
+        <div class="filledbar"></div>
+      </div>
+      <div class="circle">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <circle class="stroke" cx="60" cy="60" r="50"/>
+      </svg>
+      </div>
+    </div>
+    <div class="card animate__animated animate__zoomIn">
+        <h4 class="title "><a href="#" onclick="checkConnection('https://www.tradingview.com/chart/?symbol=NASDAQ%3ANDX', 'offline/offline6.html')">
+            <img src="/icons/تنزيل (1).png" alt="Plan 6" class="icon"><p><b>NASDAQ</b></p> 
+        </a></h4>
+        <div class="bar">
+          <div class="emptybar"></div>
+          <div class="filledbar"></div>
+        </div>
+        <div class="circle">
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <circle class="stroke" cx="60" cy="60" r="50"/>
+        </svg>
+        </div>
+      </div> 
+  </div>
+  <footer>
+    <div id="marq">
+      <marquee scrollamount="10" bgcolor="yellow" behavoir="scrollamount"hspace="50px" style="
+      margin-top: 345px;opacity: 0.8; ">
+       <span id="a"><img src="icons/green.png" width="18px">0.62% GOLD </span>
+       <span id="a"><img src="icons/green.png" width=18px>0.53% SILVER</span >
+       <span id="a"><img src="icons/green.png" width=18px>0.77% EURUSD</span >
+       <span id="a"><img src="icons/green.png" width=18px>0.49% AUDUSD</span >
+       <span id="a"><img src="icons/green.png" width=18px>1.07% GBPUSD</span >
+       <span id="a"><img src="icons/green.png" width=18px>0.65% NZDUSD</span >
+       <span id="a"><img src="icons/red.png" width=18px>-0.35% OIL</span >
+       <span id="a"><img src="icons/red.png" width=18px>-0.29% DOWJONS</span >
+       <span id="a"><img src="icons/red.png" width=18px>-0.50% NASDAQ</span >
+       <span id="a"><img src="icons/green.png" width=18px>0.52% ETHUSD</span >
+       <span id="a"><img src="icons/green.png" width=18px>1.5% BTCUSD</span >
+       <span id="a"><img src="icons/red.png" width=18px>-8.05% TRPUSD</span >
+       <span id="a"><img src="icons/green.png" width=18px>0.37% XRPUSD</span >
+       <span id="a"><img src="icons/red.png" width=18px>-0.40% AAPL</span >
+       <span id="a"><img src="icons/red.png" width=18px>-1.41% TSLA</span >
+       <span id="a"><img src="icons/red.png" width=18px>-0.74% NFLX</span >
+      
+       </marquee>
+    </div>
+   </footer>
+  </body>
+  <style>
+    body {
+  background-color: #100e17;
+  font-family: 'Open Sans', sans-serif;
+}
+
+  
+.container {
+  position: absolute;
+  height: 300px;
+  width: 800px;
+  top: 150px;
+  left: calc(50% - 300px);
+  display: flex;
+}
+.banner {
+    width: 60%;
+    height: 52vh;
+    display: flex;
+    justify-content:space-between;
+    align-items: center; 
+}
+
+
+ #a{
+  padding-left: 5%;
+  
+}
+.banner h1{
+    font-size: 55px;
+    color: rgb(255, 255, 255);
+    margin-bottom: 5%;
+    margin-left: 8%;
+
+}
+
+.card {
+  display: flex;
+  height: 270px;
+  width: 200px;
+  background-color: #17141d;
+  border-radius: 10px;
+  box-shadow: -1rem 0 3rem #000;
+/*   margin-left: -50px; */
+  transition: 0.4s ease-out;
+  position: relative;
+  left: 0px;
+}
+
+.card:not(:first-child) {
+    margin-left: -50px;
+}
+
+.card:hover {
+  transform: translateY(-20px);
+  transition: 0.4s ease-out;
+}
+
+.card:hover ~ .card {
+  position: relative;
+  left: 50px;
+  transition: 0.4s ease-out;
+}
+
+.title {
+  color: white;
+  font-weight: 300;
+  position: absolute;
+  left: 20px;
+  top: 15px;
+}
+
+.bar {
+  position: absolute;
+  top: 100px;
+  left: 20px;
+  height: 5px;
+  width: 150px;
+}
+
+.emptybar {
+  background-color: #2e3033;
+  width: 100%;
+  height: 100%;
+}
+
+.filledbar {
+  position: absolute;
+  top: 0px;
+  z-index: 3;
+  width: 0px;
+  height: 100%;
+  background: rgb(0,154,217);
+  background: linear-gradient(90deg, rgba(0,154,217,1) 0%, rgba(217,147,0,1) 65%, rgba(255,186,0,1) 100%);
+  transition: 0.6s ease-out;
+}
+
+.card:hover .filledbar {
+  width: 120px;
+  transition: 0.4s ease-out;
+}
+
+.circle {
+  position: absolute;
+  top: 140px;
+  left: calc(50% - 60px);
+}
+
+.stroke {
+  stroke: white;
+  stroke-dasharray: 360;
+  stroke-dashoffset: 360;
+  transition: 0.6s ease-out;
+}
+
+svg {
+  fill: #17141d;
+  stroke-width: 2px;
+}
+
+.card:hover .stroke {
+  stroke-dashoffset: 100;
+  transition: 0.6s ease-out;
+}
+body{
+    background-image: url(imgs/5.webp);
+    background-size: 50%;
+}
+
+.title img{
+    width: 50px;
+  border-radius: 30%;
+  border-style: solid;
+  border-color: #2e3033;
+}
+  </style>
+
+
+
+    <script>
+        function checkConnection(onlineUrl, offlineUrl) {
+            if (navigator.onLine) {
+                window.location.href = onlineUrl;
+            } else {
+                window.location.href = offlineUrl;
+            }
+        }
+    </script>

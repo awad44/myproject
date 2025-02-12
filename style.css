@@ -1,0 +1,95 @@
+body {
+    background-color: #090000;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    height: 100vh;
+    margin-top: 100px;
+    font-family:'Raleway',sans-serif;
+}
+
+
+.btn {
+    padding: 8px 20px;
+    width: 230px;
+    height: 55px;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 0;
+    text-transform: uppercase;
+    margin: 30px;
+    overflow: hidden;
+    position: relative;
+}
+
+.btn::before {
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg,transparent,#00fffc,transparent);
+    transform: translateX(-80%);
+    transition: 1s;
+    position: absolute;
+}
+
+.btn:hover {
+    background: transparent;
+    box-shadow: 0 0 20px 5px #00fffc ;
+}
+
+.btn:hover::before{
+    transform: translateX(100%);
+}
+
+/* 2nd button*/
+.btn:nth-child(2) {
+    border: 1px solid #ff0000;
+}
+.btn:nth-child(2)::before{
+    background: linear-gradient(120deg,transparent,#ff0000,transparent);
+}
+.btn:nth-child(2):hover {
+    box-shadow: 0 0 20px 5px #ff0000;
+}
+
+/*3rd butoon*/
+.btn:nth-child(3) {
+    border: 1px solid #62ff00 ;
+}
+.btn:nth-child(3)::before{
+    background: linear-gradient(120deg,transparent,#62ff00,transparent);
+}
+.btn:nth-child(3):hover {
+    box-shadow: 0 0 20px 5px #62ff00;
+}
+
+.name01 .h11{
+    font-size: 50px;
+    color:transparent;
+    -webkit-text-stroke: 2px #fff;
+
+
+}
+
+.name01 .Exchange{
+    font-size: 38px;
+    -webkit-text-stroke: 2px #0015ff8f;
+}
+.loader{
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
